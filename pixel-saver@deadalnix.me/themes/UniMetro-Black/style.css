@@ -1,14 +1,3 @@
-.box-bin { }
-
-.button-box {
-    spacing: 1px;
-}
-
-.window-button {
-    width: 19px;
-    height: 19px;
-}
-
 .minimize {
     background-image: url('min.png');
 }
@@ -19,17 +8,15 @@
     background-image: url("minactive.png");
 }
 
-
-.maximize {
+.restore {
     background-image: url('max.png');
 }
-.maximize:hover {
+.restore:hover {
     background-image: url("maxhover.png");
 }
-.maximize:active {
+.restore:active {
     background-image: url("maxactive.png");
 }
-
 
 .close {
     background-image: url('close.png');
