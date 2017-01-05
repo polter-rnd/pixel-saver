@@ -134,7 +134,7 @@ function onAppMenuHover(actor) {
 			}
 			
 			let label = appMenu._label;
-			if (label == null || !label.get_clutter_text().get_layout().is_ellipsized()) {
+			if (!label.get_clutter_text().get_layout().is_ellipsized()) {
 				// Do not need to hide.
 				tooltipDelayCallbackID = 0;
 				return false;
@@ -142,10 +142,11 @@ function onAppMenuHover(actor) {
 			
 			Main.uiGroup.add_actor(tooltip);
 			
+			[px, py] = Main.panel.actor.get_transformed_position();
 			[bx, by] = label.get_transformed_position();
 			[w, h] = label.get_transformed_size();
 			
-			let y = by + h + 10;
+			let y = py + Main.panel.actor.get_height() + 3;
 			let x = bx - Math.round((tooltip.get_width() - w)/2);
 			tooltip.opacity = 0;
 			tooltip.set_position(x, y);
